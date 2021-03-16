@@ -68,7 +68,7 @@ namespace BackAlleyClinic.Controllers
       Doctor thisDoctor = _db.Doctors.FirstOrDefault(doctor => doctor.DoctorId == id);
       _db.Doctors.Remove(thisDoctor);
       _db.SaveChanges();
-      return DedirectToAction("Index");
+      return RedirectToAction("Index");
     }
   }
 }

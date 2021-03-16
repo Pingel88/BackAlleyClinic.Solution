@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BackAlleyClinic.Models.Doctor
+
+<h2>Edit</h2>
+
+<h4>Edit Dr. @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.DoctorId)
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  @Html.LabelFor(model => model.Specialty)
+  @Html.EditorFor(model => model.Specialty)
+
+  <input type="submit" value="Save" class="btn btn-outline-warning">
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

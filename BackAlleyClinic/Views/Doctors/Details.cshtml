@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BackAlleyClinic.Models.Doctor
+
+<h2>Doctor Details</h2>
+<hr>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>Dr. @Html.DisplayFor(model => model.Name) does not have any patients listed</p>
+}
+else
+{
+  <h4>Dr. @Html.DisplayFor(model => model.Name) has the following patients:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Patient.Name</li>
+  }
+  </ul>
+}

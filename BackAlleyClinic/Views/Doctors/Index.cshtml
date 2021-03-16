@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BackAlleyClinic.Models;
+@model List<BackAlleyClinic.Models.Doctor>;
+
+<h1>Doctors</h1>
+
+<ul>
+  @foreach(Doctor doctor in Model)
+  {
+    <li>Dr. @Html.ActionLink($"{doctor.Name}", "Details", new { id = doctor.DoctorId }) | $"{doctor.Specialty}"</li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add new doctor", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
