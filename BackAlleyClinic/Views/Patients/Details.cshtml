@@ -5,14 +5,15 @@
 @model BackAlleyClinic.Models.Patient
 
 <h2>Patient Deets</h2>
-<hr>
+<hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h4>@Html.DisplayNameFor(model => model.BirthDate): @Html.DisplayFor(model => model.BirthDate)</h4>
 
 @if (@Model.JoinEntities.Count == 0)
 {
   <p>This patient is not assigned to any doctors yet</p>
 }
-elsePatient
+else
 {
   <h4>Doctors this patient is seeing:</h4>
   <ul>
@@ -28,7 +29,7 @@ elsePatient
   </ul>
 }
 
-<p>@Html.ActionLink("Add a Doctor", "AddDoctor", new { id = Model.PId})</p>
+<p>@Html.ActionLink("Add a Doctor", "AddDoctor", new { id = Model.PatientId})</p>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
 

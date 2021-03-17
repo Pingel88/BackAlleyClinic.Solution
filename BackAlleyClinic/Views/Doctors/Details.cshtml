@@ -6,7 +6,8 @@
 
 <h2>Doctor Details</h2>
 <hr>
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>Dr. @Html.DisplayFor(model => model.Name)</h3>
+<h5>@Html.DisplayFor(model => model.Specialty) Medicine</h5>
 
 @if (@Model.JoinEntities.Count == 0)
 {
@@ -22,3 +23,6 @@ else
   }
   </ul>
 }
+<p>@Html.ActionLink("Edit doctor", "Edit", new { id = Model.DoctorId })</p>
+<p>@Html.ActionLink("Delete doctor", "Delete", new { id = Model.DoctorId })</p>
+<p>@Html.ActionLink("Back to doctor list", "Index")</p>

@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BackAlleyClinic.Models.Patient
+
+<h4>Add a new patient</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { required = "required" })
+
+  @Html.Label("Select doctor")
+  @Html.DropDownList("DoctorId")
+
+  @Html.Label("Birth date")
+  @Html.EditorFor(model => model.BirthDate, new { @type = "date" })
+
+  <input type="submit" value="Add new patient" class="btn btn-warning" />
+}
+
+<p>@Html.ActionLink("Show all patients", "Index")</p>

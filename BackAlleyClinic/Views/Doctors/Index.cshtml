@@ -10,7 +10,7 @@
 <ul>
   @foreach(Doctor doctor in Model)
   {
-    <li>Dr. @Html.ActionLink($"{doctor.Name}", "Details", new { id = doctor.DoctorId }) | $"{doctor.Specialty}"</li>
+    <li>@Html.ActionLink($"Dr. {doctor.Name}", "Details", new { id = doctor.DoctorId }) | @doctor.Specialty</li>
   }
 </ul>
 
